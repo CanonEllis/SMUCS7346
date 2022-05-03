@@ -16,14 +16,14 @@ jobs:
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v0'
       with:
-        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+        credentials_json: '${{ secrets.GCP_SA_KEY }}'
        
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v0'
       
     - name: 'Submit to cloud build'
       run: |
-        gcloud builds submit --tag gcr.io/CS7346Assignment3/simple-webserver
+        gcloud builds submit --tag gcr.io/smu-cs7346
 
     - name: 'Deploy to Cloud Run'
-      run: gcloud run deploy simple-webserver --image=CS7346Assignment3/simple-webserver:latest --region=us-central1 --allow-unauthenticated
+      run: gcloud run deploy simple-webserver --image=smu-cs7346:latest --region=us-central1 --allow-unauthenticated
