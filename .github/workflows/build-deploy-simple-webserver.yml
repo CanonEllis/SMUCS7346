@@ -26,4 +26,4 @@ jobs:
         gcloud builds submit --tag gcr.io/CS7346Assignment3/simple-webserver
 
     - name: 'Deploy to Cloud Run'
-      run: gcloud run deploy simple-webserver --image=gcr.io/cloudrun/placeholder@sha256:b046cf24d83df99a2e943dd2e5e40d06fe5c7e1a725c521de9c08ef15cbb2c29:latest --region=us-central1 --allow-unauthenticated
+      run: gcloud run deploy simple-webserver --image=CS7346Assignment3/simple-webserver:latest --region=us-central1 --allow-unauthenticated
