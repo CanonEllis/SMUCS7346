@@ -26,4 +26,4 @@ jobs:
         gcloud builds submit --tag gcr.io/smu-cs7346/simple-webserver
 
     - name: 'Deploy to Cloud Run'
-      run: gcloud run deploy simple-webserver --image=smu-cs7346/simple-webserver:latest --region=us-central1 --allow-unauthenticated
+      run: gcloud run deploy simple-webserver --image=gcr.io/smu-cs7346/simple-webserver:latest --region=us-central1 --allow-unauthenticated
